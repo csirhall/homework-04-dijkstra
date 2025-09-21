@@ -1,51 +1,70 @@
-# graphs_carmen
+graphs_csirhall
 
-This is a Python package for graph algorithms, including Dijkstra's shortest path. It is structured for easy installation and command-line usage.
+A Python package for graph algorithms, including Dijkstra's shortest path.
+The project is structured for easy installation, testing, and future extension with more graph algorithms.
 
-## Installation
+📦 Installation
 
-To install locally:
+Clone the repository and install locally with:
 
-    pip install .
+git clone https://github.com/csirhall/dijkstra-sp.git
+cd dijkstra-sp
+pip install .
 
-## Usage
+▶️ Usage
 
-Run the shortest path algorithm from the command line:
+Run the shortest path algorithm using the provided test.py script:
 
-    python test.py graph.txt
+python src/test.py graph.txt
 
-## Graph File Format
 
-The input file should start with the number of vertices, followed by edges in the format:
+This will:
 
-    source destination weight
+Read the graph from graph.txt.
 
-Example:
+Compute the shortest distances from source node 0.
 
-    9
-    0 1 4
-    0 7 8
-    1 2 8
-    1 7 11
-    2 3 7
-    2 8 2
-    3 4 9
-    3 5 14
-    4 5 10
-    5 6 2
-    6 7 1
-    6 8 6
-    7 8 7
+Print the distances and the shortest paths.
 
-## Output
+📄 Graph File Format
 
-The script prints shortest distances from the source node (0), and the shortest path to each node.
+The graph file should:
 
-## Repository
+Start with the number of vertices.
 
-GitHub URL: https://github.com/csirhall/dijkstra-sp
+List edges in the format:
 
-## Branches
+source destination weight
 
-- `main` branch is protected
-- `dev` branch is used for development
+Example
+9
+0 1 4
+0 7 8
+1 2 8
+1 7 11
+2 3 7
+2 8 2
+2 5 4
+3 4 9
+3 5 14
+4 5 10
+5 6 2
+6 7 1
+6 8 6
+7 8 7
+
+📊 Example Output
+
+For the graph above, the program prints:
+
+Shortest distances from 0:
+[0, 4, 12, 19, 28, 16, 18, 8, 14]
+spf to 0: []
+spf to 1: [0]
+spf to 2: [0, 1]
+spf to 3: [0, 1, 2]
+spf to 4: [0, 1, 2, 3]
+spf to 5: [0, 1, 2]
+spf to 6: [0, 7]
+spf to 7: [0]
+spf to 8: [0, 1, 2]
